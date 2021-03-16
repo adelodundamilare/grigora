@@ -47,37 +47,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-        providers: [],
-        builder: (context, child) {
-          return MaterialApp(
-            title: 'Flutter Demo',
-            theme: ThemeData(
-              textTheme: _buildTextTheme(Theme.of(context).textTheme),
-              primaryTextTheme:
-                  _buildTextTheme(Theme.of(context).primaryTextTheme),
-              accentTextTheme:
-                  _buildTextTheme(Theme.of(context).accentTextTheme),
-              primarySwatch: primarySwatch,
-              visualDensity: VisualDensity.adaptivePlatformDensity,
-              backgroundColor: Colors.white,
-            ),
-            home: ScreenHome(),
-            onGenerateRoute: (RouteSettings settings) {
-              switch (settings.name) {
-                case EnumRoutes.home:
-                  return MyCustomRoute(
-                      builder: (_) => ScreenHome(), settings: settings);
-                case EnumRoutes.details:
-                  return MyCustomRoute(
-                      builder: (_) => ScreenDetails(), settings: settings);
-                default:
-                  return MyCustomRoute(
-                      builder: (_) => ScreenHome(), settings: settings);
-              }
-            },
-          );
-        });
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        textTheme: _buildTextTheme(Theme.of(context).textTheme),
+        primaryTextTheme: _buildTextTheme(Theme.of(context).primaryTextTheme),
+        accentTextTheme: _buildTextTheme(Theme.of(context).accentTextTheme),
+        primarySwatch: primarySwatch,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        backgroundColor: Colors.white,
+      ),
+      home: ScreenHome(),
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case EnumRoutes.home:
+            return MyCustomRoute(
+                builder: (_) => ScreenHome(), settings: settings);
+          case EnumRoutes.details:
+            return MyCustomRoute(
+                builder: (_) => ScreenDetails(), settings: settings);
+          default:
+            return MyCustomRoute(
+                builder: (_) => ScreenHome(), settings: settings);
+        }
+      },
+    );
   }
 }
 
