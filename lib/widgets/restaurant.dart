@@ -1,5 +1,5 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:origora/constants/images.dart';
 import 'package:origora/utils/palette.dart';
 import 'package:origora/widgets/app_text.dart';
@@ -111,6 +111,7 @@ class Restaurant extends StatelessWidget {
                   AppText(
                     title ?? 'no_title',
                     isBoldFont: true,
+                    maxLines: 1,
                   ),
                   UIHelper.verticalSpaceVerySmall,
                   AppText(
@@ -158,11 +159,10 @@ class __Time extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Icon(
-            FontAwesomeIcons.solidCircle,
+            EvaIcons.closeCircle,
             size: 10,
             color: Palette.accent,
           ),
-          UIHelper.horizontalSpaceVerySmall,
           AppText(
             text ?? 'no_text',
             textSize: 16,

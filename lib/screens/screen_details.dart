@@ -2,7 +2,6 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:origora/enums/routes.dart';
 import 'package:origora/models/details.dart';
-import 'package:origora/models/restaurant.dart';
 import 'package:origora/screens/screen_details_vm.dart';
 import 'package:origora/utils/app_fonts.dart';
 import 'package:origora/utils/base_widget.dart';
@@ -33,7 +32,6 @@ class ScreenDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DetailsArgs args = ModalRoute.of(context).settings.arguments;
     return BaseWidget<ScreenDetailVM>(
         onInitState: (model) => model.mounted(),
         model: ScreenDetailVM(),
@@ -288,10 +286,7 @@ class __HeaderContentLoading extends StatelessWidget {
   }
 }
 
-/**
- * @todo: convert to global widget
- * this is more up to date anyways...
- */
+// @todo: convert to global widget this is more up to date anyways...
 class __LoadBar extends StatelessWidget {
   final double width, height;
   final bool onBlackBg;
@@ -600,7 +595,7 @@ class __OrderInfo extends StatelessWidget {
             value ?? 'no_value',
             isBoldFont: true,
             textColor: Palette.white,
-            textSize: 24,
+            textSize: 20,
           )
         ],
       ),

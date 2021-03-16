@@ -1,5 +1,5 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:origora/enums/routes.dart';
 import 'package:origora/layouts/layout_with_drawer.dart';
 import 'package:origora/models/restaurant.dart';
@@ -142,8 +142,7 @@ class __NewInGrigoraState extends State<_NewInGrigora> {
                         shape: BoxShape.circle,
                         border: Border.all(color: Palette.accent, width: 2)),
                     child: Icon(
-                      FontAwesomeIcons.arrowRight,
-                      size: 12,
+                      EvaIcons.arrowRight,
                       color: Palette.accent,
                     ),
                   ),

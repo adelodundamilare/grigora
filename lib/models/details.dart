@@ -1,4 +1,3 @@
-import 'package:origora/models/restaurant.dart';
 import 'package:origora/utils/api.dart';
 import 'package:origora/utils/endpoints.dart';
 
