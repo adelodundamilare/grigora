@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:origora/screens/screen_details.dart';
 import 'package:origora/screens/screen_home.dart';
-import 'package:origora/utils/app_providers.dart';
 import 'package:origora/utils/palette.dart';
-import 'package:provider/provider.dart';
 import 'package:logger/logger.dart';
 import 'package:origora/utils/app_fonts.dart';
 import 'package:origora/enums/routes.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   Logger.level = Level.verbose;
@@ -49,33 +48,36 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: appProviders,
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          textTheme: _buildTextTheme(Theme.of(context).textTheme),
-          primaryTextTheme: _buildTextTheme(Theme.of(context).primaryTextTheme),
-          accentTextTheme: _buildTextTheme(Theme.of(context).accentTextTheme),
-          primarySwatch: primarySwatch,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          backgroundColor: Colors.white,
-        ),
-        home: ScreenHome(),
-        onGenerateRoute: (RouteSettings settings) {
-          switch (settings.name) {
-            case EnumRoutes.home:
-              return MyCustomRoute(
-                  builder: (_) => ScreenHome(), settings: settings);
-            case EnumRoutes.details:
-              return MyCustomRoute(
-                  builder: (_) => ScreenDetails(), settings: settings);
-            default:
-              return MyCustomRoute(
-                  builder: (_) => ScreenHome(), settings: settings);
-          }
-        },
-      ),
-    );
+        providers: [],
+        builder: (context, child) {
+          return MaterialApp(
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              textTheme: _buildTextTheme(Theme.of(context).textTheme),
+              primaryTextTheme:
+                  _buildTextTheme(Theme.of(context).primaryTextTheme),
+              accentTextTheme:
+                  _buildTextTheme(Theme.of(context).accentTextTheme),
+              primarySwatch: primarySwatch,
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+              backgroundColor: Colors.white,
+            ),
+            home: ScreenHome(),
+            onGenerateRoute: (RouteSettings settings) {
+              switch (settings.name) {
+                case EnumRoutes.home:
+                  return MyCustomRoute(
+                      builder: (_) => ScreenHome(), settings: settings);
+                case EnumRoutes.details:
+                  return MyCustomRoute(
+                      builder: (_) => ScreenDetails(), settings: settings);
+                default:
+                  return MyCustomRoute(
+                      builder: (_) => ScreenHome(), settings: settings);
+              }
+            },
+          );
+        });
   }
 }
 
